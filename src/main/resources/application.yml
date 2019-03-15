@@ -6,5 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
+  security:
+    user:
+      name: yuesao
+      password: sunshixiong
