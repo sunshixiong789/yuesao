@@ -25,6 +25,12 @@ public class PersonInfo {
   @ApiModelProperty(value = "姓名")
   private String name;
 
+  @ApiModelProperty(value = "状态:空闲，工作中")
+  private String status = "空闲";
+
+  @ApiModelProperty(value = "种类，月嫂 1，育儿嫂 2")
+  private String kind;
+
   @ApiModelProperty(value = "价格")
   private String Price;
 
@@ -42,7 +48,7 @@ public class PersonInfo {
   @ApiModelProperty(value = "籍贯")
   private String nativePlace;
 
-  @ApiModelProperty(value = "籍贯")
+  @ApiModelProperty(value = "出生日期")
   private String birthday;
 
   @ApiModelProperty(value = "健康状况")
@@ -50,9 +56,6 @@ public class PersonInfo {
 
   @ApiModelProperty(value = "健康状况")
   private String idCard;
-
-  @ApiModelProperty(value = "工种")
-  private String profession;
 
   @ApiModelProperty(value = "名族")
   private String nationalists;
@@ -82,7 +85,7 @@ public class PersonInfo {
   private String maternalCare;
 
   @ApiModelProperty(value = "月嫂服务-婴儿护理")
-  private String BabyCare;
+  private String babyCare;
 
   @ApiModelProperty(value = "职业道德")
   private String professionalEthics;
@@ -91,7 +94,7 @@ public class PersonInfo {
   private String workExperience;
 
   @ApiModelProperty(value = "生活照")
-  private String LifePhotos;
+  private String lifePhotos;
 
 
 }
