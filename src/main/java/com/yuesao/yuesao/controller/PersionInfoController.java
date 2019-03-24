@@ -33,7 +33,21 @@ public class PersionInfoController {
     return personInfoDao.findAll(example, pageable);
   }
 
+  /**
+   * 修改
+   * @param personInfo
+   * @return
+   */
   @PutMapping
+  public PersonInfo upDataPersonInfo(@RequestBody PersonInfo personInfo){
+    return personInfoDao.save(personInfo);
+  }
+  /**
+   * 修改
+   * @param personInfo
+   * @return
+   */
+  @PostMapping
   public PersonInfo addPersonInfo(@RequestBody PersonInfo personInfo){
     return personInfoDao.save(personInfo);
   }

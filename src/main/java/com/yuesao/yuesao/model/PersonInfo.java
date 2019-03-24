@@ -26,7 +26,7 @@ public class PersonInfo {
   private String name;
 
   @ApiModelProperty(value = "状态:空闲，工作中")
-  private String status = "空闲";
+  private boolean status = true;
 
   @ApiModelProperty(value = "种类，月嫂 1，育儿嫂 2")
   private String kind;
