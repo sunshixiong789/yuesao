@@ -1,8 +1,11 @@
 package com.yuesao.yuesao.model;
 
+import com.yuesao.yuesao.convert.JsonConverter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,10 +38,12 @@ public class PersonInfo {
   private String Price;
 
   @ApiModelProperty(value = "工作年限")
-  private String workingLife;
+  @Convert(converter = JsonConverter.class)
+  private Object workingLife;
 
   @ApiModelProperty(value = "头像")
-  private String headPortrait;
+  @Convert(converter = JsonConverter.class)
+  private Object headPortrait;
 
   @ApiModelProperty(value = "性别")
   private String sex;
@@ -54,7 +59,7 @@ public class PersonInfo {
   @ApiModelProperty(value = "健康状况")
   private String health;
 
-  @ApiModelProperty(value = "健康状况")
+  @ApiModelProperty(value = "省份证")
   private String idCard;
 
   @ApiModelProperty(value = "名族")
@@ -70,10 +75,12 @@ public class PersonInfo {
   private String address;
 
   @ApiModelProperty(value = "参加培训")
-  private String training;
+  @Convert(converter = JsonConverter.class)
+  private Object training;
 
   @ApiModelProperty(value = "政治面貌")
-  private String politicsStatus;
+  @Convert(converter = JsonConverter.class)
+  private Object politicsStatus;
 
   @ApiModelProperty(value = "户口所在地")
   private String domicilePlace;
@@ -82,19 +89,24 @@ public class PersonInfo {
   private String standardCulture;
 
   @ApiModelProperty(value = "月嫂服务-产妇护理")
-  private String maternalCare;
+  @Convert(converter = JsonConverter.class)
+  private Object maternalCare;
 
   @ApiModelProperty(value = "月嫂服务-婴儿护理")
-  private String babyCare;
+  @Convert(converter = JsonConverter.class)
+  private Object babyCare;
 
   @ApiModelProperty(value = "职业道德")
-  private String professionalEthics;
+  @Convert(converter = JsonConverter.class)
+  private Object professionalEthics;
 
-  @ApiModelProperty(value = "职业道德")
-  private String workExperience;
+  @ApiModelProperty(value = "工作经验")
+  @Convert(converter = JsonConverter.class)
+  private Object workExperience;
 
   @ApiModelProperty(value = "生活照")
-  private String lifePhotos;
+  @Convert(converter = JsonConverter.class)
+  private Object lifePhotos;
 
 
 }
