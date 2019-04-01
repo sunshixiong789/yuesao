@@ -6,6 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,7 +23,7 @@ import java.util.UUID;
 @RequestMapping(value = "/file")
 public class FilesController {
 
-  private  static final String LOCAL_URL = "E:/usr/local/cuit";
+  private  static final String LOCAL_URL = "/usr/local/cuit";
   /**
    * 文件上传
    *
@@ -43,7 +46,7 @@ public class FilesController {
         }
         File loadfile = new File(LOCAL_URL + File.separator + name + File.separator + loadFileName);
         file.transferTo(loadfile);
-        fileUrl ="/upload/download?fileName="+ File.separator + name + File.separator + loadFileName;
+        fileUrl ="/file/download?fileName="+ URLEncoder.encode(File.separator + name + File.separator + loadFileName,"gb2312");
       }
 
     }
@@ -60,7 +63,7 @@ public class FilesController {
   @GetMapping(value = "/download")
   public void download(String fileName, HttpServletResponse response) throws UnsupportedEncodingException {
 
-    File file = new File(LOCAL_URL  + fileName);
+    File file = new File(LOCAL_URL  + URLDecoder.decode(fileName,"gb2312"));
 
     response.reset();
     response.setHeader("Content-Disposition",

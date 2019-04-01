@@ -3,10 +3,7 @@ package com.yuesao.yuesao.controller;
 import com.yuesao.yuesao.dao.PersonInfoDao;
 import com.yuesao.yuesao.model.PersonInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,9 +24,10 @@ public class PersionInfoController {
 
   @GetMapping
   public Page<PersonInfo> getPersonInfo(PersonInfo entity
-          , @PageableDefault(size = 20, sort = "id"
+          , @PageableDefault(size = 500, sort = "id"
           , direction = Sort.Direction.ASC) Pageable pageable) {
-    Example example = Example.of(entity);
+    ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name",matcher1 -> matcher1.contains());
+    Example example = Example.of(entity,matcher);
     return personInfoDao.findAll(example, pageable);
   }
 

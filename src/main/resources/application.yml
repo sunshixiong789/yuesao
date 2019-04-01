@@ -16,3 +16,10 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+server:
+  port: 443
+  ssl:
+    key-store: E:/tomacat.key
+    key-store-type: JKS
+    key-alias: tomcat
+    key-password: sunshixiong
