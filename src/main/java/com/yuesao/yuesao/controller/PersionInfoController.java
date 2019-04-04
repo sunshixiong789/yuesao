@@ -47,6 +47,7 @@ public class PersionInfoController {
    */
   @PostMapping
   public PersonInfo addPersonInfo(@RequestBody PersonInfo personInfo){
+    personInfo.setStatus(true);
     return personInfoDao.save(personInfo);
   }
 

@@ -29,13 +29,13 @@ public class PersonInfo {
   private String name;
 
   @ApiModelProperty(value = "状态:空闲，工作中")
-  private boolean status = true;
+  private boolean status;
 
   @ApiModelProperty(value = "种类，月嫂 1，育儿嫂 2")
   private String kind;
 
   @ApiModelProperty(value = "价格")
-  private String Price;
+  private String price;
 
   @ApiModelProperty(value = "工作年限")
   @Convert(converter = JsonConverter.class)

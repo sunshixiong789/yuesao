@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date 2019/3/11 21:10
  */
 public interface PersonInfoDao extends JpaRepository<PersonInfo,Integer> {
+
+
 }
