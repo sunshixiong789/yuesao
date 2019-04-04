@@ -26,7 +26,7 @@ public class PersionInfoController {
   public Page<PersonInfo> getPersonInfo(PersonInfo entity
           , @PageableDefault(size = 500, sort = "id"
           , direction = Sort.Direction.ASC) Pageable pageable) {
-    ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name",matcher1 -> matcher1.contains());
+    ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name",matcher1 -> matcher1.contains()).withIgnorePaths("status");
     Example example = Example.of(entity,matcher);
     return personInfoDao.findAll(example, pageable);
   }
